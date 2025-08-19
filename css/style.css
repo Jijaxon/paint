@@ -1,0 +1,160 @@
+@import url('https://fonts.googleapis.com/css2?family=Libertinus+Sans:ital,wght@0,400;0,700;1,400&family=Mozilla+Headline:wght@200..700&family=Nata+Sans:wght@100..900&display=swap');
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'Mozilla Headline', 'Libertinus Sans', 'Nata Sans', sans-serif;
+}
+body {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	min-height: 100vh;
+	background: rgb(3, 37, 24);
+	background: linear-gradient(
+		90deg,
+		rgb(6, 74, 57) 0%,
+		rgb(16, 138, 126) 35%,
+		rgb(177, 240, 227) 100%
+	);
+}
+.container {
+	display: flex;
+	width: 100%;
+	gap: 10px;
+	padding: 10px;
+	max-width: 1050px;
+}
+section {
+	background: #fff;
+}
+.title {
+	text-transform: uppercase;
+}
+.tools-board {
+	width: 210px;
+	padding: 15px 22px 0;
+}
+.tools-board .row {
+	margin-bottom: 20px;
+}
+.row .options {
+	list-style: none;
+	margin: 10px 0 0 5px;
+}
+.row .options li {
+	display: flex;
+	cursor: pointer;
+	align-items: center;
+	margin-bottom: 10px;
+}
+.tools:hover,
+.tools.active {
+	filter: invert(32%) sepia(53%) saturate(900%) hue-rotate(137deg)
+		brightness(92%) contrast(92%);
+}
+.option.tools:hover,
+.option.tools.active {
+	filter: invert(32%) sepia(53%) saturate(900%) hue-rotate(137deg)
+		brightness(92%) contrast(92%);
+}
+
+.option :where(span, label) {
+	color: #5a6168;
+	cursor: pointer;
+	padding-left: 10px;
+}
+.option:is(:hover, .active):where(span, label) {
+	color: #11957f;
+}
+.options #fill-color {
+	cursor: pointer;
+	height: 14px;
+	width: 14px;
+}
+#fill-color:checked ~ label {
+	color: #11957f;
+}
+.option #size-slider {
+	cursor: pointer;
+	width: 100%;
+	height: 5px;
+}
+.colors .options {
+	display: flex;
+	justify-content: space-between;
+}
+.colors .option {
+	height: 20px;
+	width: 20px;
+	border-radius: 50%;
+	margin-top: 3px;
+	position: relative;
+}
+.colors .option:nth-child(1) {
+	background-color: #fff;
+	border: 1px solid #bfbfbf;
+}
+.colors .option:nth-child(2) {
+	background-color: black;
+}
+.colors .option:nth-child(3) {
+	background-color: red;
+}
+.colors .option:nth-child(4) {
+	background-color: #6dd400;
+}
+.colors .option:nth-child(5) {
+	background-color: #11957f;
+}
+.colors .option.selected::before {
+	position: absolute;
+	content: '';
+	top: 50%;
+	left: 50%;
+	height: 12px;
+	width: 12px;
+	background: inherit;
+	border-radius: inherit;
+	border: 2px solid #fff;
+	transform: translate(-50%, -50%);
+}
+.colors .option:first-child.selected::before {
+	border-color: #ccc;
+}
+.options #color-picker {
+	opacity: 0;
+	cursor: pointer;
+}
+.buttons button {
+	width: 100%;
+	color: #fff;
+	border: none;
+	outline: none;
+	padding: 11px 0;
+	font-size: 0.9rem;
+	margin-bottom: 13px;
+	background: none;
+	border-radius: 4px;
+	cursor: pointer;
+}
+.buttons .clear-canvas {
+	color: #6c757d;
+	border: 1px solid #6c757d;
+}
+.clear-canvas:hover {
+	color: #fff;
+	background: #6c757d;
+}
+.buttons .save-img {
+	background: #11957f;
+	border: 1px solid #11957f;
+}
+.drawing-board {
+	flex: 1;
+	overflow: hidden;
+}
+.drawing-board canvas {
+	width: 100%;
+	height: 100%;
+}
